@@ -29,5 +29,5 @@
 
 > This container does not have a headless browser configuration
 
-[tests]: https://circleci.com/gh/webpack-contrib/ccircleci-node-jdk9.svg?style=svg
+[tests]: https://circleci.com/gh/webpack-contrib/circleci-node-jdk9.svg?style=svg
 [tests-url]: https://circleci.com/gh/webpack-contrib/circleci-node-jdk9
