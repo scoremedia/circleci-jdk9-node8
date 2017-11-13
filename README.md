@@ -7,7 +7,7 @@
     <img width="200" height="200" vspace="" hspace="25"
       src="https://cdn.worldvectorlogo.com/logos/webpack-icon.svg">
   </a>
-  <h1>CircleCI 2.0 JDK 9 build container</h1>
+  <h1>CircleCI 2.0 JDK 9 NodeJS 8 LTS build container</h1>
   <p>Docker Repository for the WebpackContrib Closure JDK9 test container.<p>
 </div>
 
@@ -16,7 +16,7 @@
 ```bash
 # config.yml
     docker:
-      - image: webpackcontrib/circleci-node-jdk9
+      - image: webpackcontrib/circleci-jdk9-node8
 ```
 
 <h2 align="center">Container Includes</h2>
@@ -29,5 +29,5 @@
 
 > This container does not have a headless browser configuration
 
-[tests]: https://circleci.com/gh/webpack-contrib/circleci-node-jdk9.svg?style=svg
-[tests-url]: https://circleci.com/gh/webpack-contrib/circleci-node-jdk9
+[tests]: https://circleci.com/gh/webpack-contrib/circleci-jdk9-node8.svg?style=svg
+[tests-url]: https://circleci.com/gh/webpack-contrib/circleci-jdk9-node8
