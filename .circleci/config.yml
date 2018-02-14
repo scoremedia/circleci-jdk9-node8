@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: docker:17.05.0-ce-git
-    working_directory: ~/circleci-jdk9-node8
+    working_directory: ~/circleci-jdk9-node8-yarn
 
     branches:
       only:
@@ -19,11 +19,11 @@ jobs:
       - run:
           name: Build application Docker image
           command: |
-            docker build -f Dockerfile -t circleci-jdk9-node8 .
+            docker build -f Dockerfile -t circleci-jdk9-node8-yarn .
       - deploy:
           name: Push Docker image
           command: |
               login="docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS"
               ${login}
-              docker tag circleci-jdk9-node8 webpackcontrib/circleci-jdk9-node8
-              docker push webpackcontrib/circleci-jdk9-node8
+              docker tag circleci-jdk9-node8-yarn devservices/circleci-jdk9-node8-yarn
+              docker push devservices/circleci-jdk9-node8-yarn

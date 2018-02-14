@@ -47,7 +47,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-9-oracle
 # ...
 RUN mkdir /usr/local/closure
 RUN wget http://dl.google.com/closure-compiler/compiler-latest.zip -O /usr/local/closure/compiler-latest.zip
-RUN unzip /usr/local/closure/compiler-latest.zip -d /usr/local/closure 
+RUN unzip /usr/local/closure/compiler-latest.zip -d /usr/local/closure
 RUN chmod 644 /usr/local/closure/closure-compiler-*.jar
 RUN rm -f /usr/local/closure/compiler-latest.zip
 
@@ -121,5 +121,10 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | b
 # Set up PATH.
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+# Install yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list \
+    && sudo apt-get update && sudo apt-get install yarn
 
 CMD [ "node" ]
